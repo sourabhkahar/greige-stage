@@ -3,7 +3,7 @@
     <header class="header desktop_header">
         
         <div class="logo">
-            <h1>LOGO</h1>
+            <img src="../assets/mobile_logo.png">
         </div>
         <div class="main-menu">
             <ul>
@@ -176,7 +176,7 @@
                 </li>
             </ul>
             </div>
-            <router-link to="/" class="logo brand">LOGO </router-link>
+            <router-link to="/" class="logo brand"> <img src="../assets/nav_logo.png"> </router-link>
             <!-- <a href="#" class="menu-block">Discover</a> -->
         </nav>    
     </header>

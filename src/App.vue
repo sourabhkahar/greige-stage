@@ -34,7 +34,7 @@ img{
     transform: scale(1.1);
     transition: 0.5s;
 }
-.main-menu ul li:hover{
+.main-menu ul li:hover,.main-menu ul li a:hover{
     color: #d45500;
 }
 .main-menu ul li:hover svg{
@@ -831,6 +831,7 @@ width: 100%;
     justify-content: revert;
     align-items: inherit;    
 }
+
 .parallex-banner{
     width: 100%;
     min-height: 100vh;
@@ -850,7 +851,7 @@ width: 100%;
     -webkit-background-size: auto;
     background-attachment: scroll;
     background-position: center;
-    background-size: auto;
+    background-size: cover;
    }
 }
 .banner_wrp h1 {
@@ -1074,10 +1075,12 @@ padding-bottom: 10px;
 }
 .address{
   text-align: center;
+  margin-top: 20px;
 }
 .footer-logo .logo h1{
   font-size: 80px;
 }
+
 .address h5,.address a,.phone h5,.phone a{
   font-size: 16px;
 }
@@ -1346,7 +1349,7 @@ footer .grid_wrp {
     justify-content: center;
   }
   .sub_menu li a{
-    color: #042023;
+    color: #042023 !important;
   }
   .css-typing p:nth-child(1) {
     width: 8em;
@@ -1690,5 +1693,37 @@ padding-bottom: 10px;
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+.header .logo img{
+  width: 100px;
+  height:auto;
+}
+.main-menu li a{
+  color: white;
+}
+.footer-logo .logo img{
+  width: 150px;
+  height: auto;
+}
+.navbar .logo img{
+  width: 100%;
+    display: flex;
+    align-items: baseline;
+
+}
+@media (max-width: 425px){
+  .Newsletter .news-box input,.Newsletter .news-box .btn_shop{
+    width: 100%;
+    margin-left: 0;
+  }
+  .Newsletter .news-box{
+    flex-direction: column;
+  }
+  .address h5, .address a, .phone h5, .phone a{
+    font-size: 15px;
+  }
+  .contact-info .btn_shop{
+    margin-top:0;
+  }
 }
 </style>

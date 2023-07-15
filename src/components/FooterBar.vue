@@ -6,7 +6,7 @@
                     <div class="contact-info">
                         <div class="footer-logo">
                             <div class="logo">
-                                <h1>LOGO</h1>
+                                <img src="../assets/logo_g.png" class="footer_logo">
                             </div>
                         </div>
 
