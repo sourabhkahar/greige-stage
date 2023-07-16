@@ -1,5 +1,6 @@
 <template>
     <div>
+        <loader-vue/>
         <!-- Home Banner -->
         <section class="home_banerr parallex-banner">
             <div class="banner_wrp">

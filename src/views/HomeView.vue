@@ -1,6 +1,7 @@
 <template>
     <div>
         <!-- Home Banner -->
+        <loader-vue/>
         <section class="home_banerr parallex-banner">
             <div class="banner_wrp">
                 <h1 class="css-typing">
@@ -62,15 +63,36 @@
             <div class="brand_wrp grid_wrp">
                 <div id="counter">
                     <div class="item">
-                        <h1 class="count" data-number="15" ></h1>
+                        <h1 class="count" > 
+                            <number
+                            ref="number1"
+                            :to="15"
+                            :duration="5"
+                            :delay="2"
+                            easing="Power1.easeOut"/>
+                        </h1>
                         <h3 class="text box">Clients</h3>
                     </div>
                     <div class="item">
-                        <h1 class="count" data-number="5" ></h1>
+                        <h1 class="count" > 
+                            <number
+                            ref="number2"
+                            :to="5"
+                            :duration="5"
+                            :delay="2"
+                            easing="Power1.easeOut"/>
+                        </h1>
                         <h3 class="text box">year+ Eexperience</h3>
                     </div>
                     <div class="item">
-                        <h1 class="count" data-number="100" ></h1>
+                        <h1 class="count" > 
+                            <number
+                            ref="number3"
+                            :to="100"
+                            :duration="5"
+                            :delay="2"
+                            easing="Power1.easeOut"/>
+                        </h1>
                         <h3 class="text box">Products</h3>
                     </div>            
                     
@@ -153,11 +175,14 @@
 </template>
   
   <script setup>
-//   import { ref, onMounted } from 'vue';
   
- 
-//   onMounted(async () => {
+  import { ref, onMounted } from 'vue';
+  const number1 = ref(null)
+  const number2 = ref(null)
+  const number3 = ref(null)
+  
+  onMounted(async () => {
+    console.log(number1.value)
+  })
 
-//   })
-  
   </script>

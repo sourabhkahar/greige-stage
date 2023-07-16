@@ -107,29 +107,29 @@
     <header class="Mobile_header" id="header">        
         <nav class="navbar container">
             <a href="javascript:void(0)" class="logo brand"></a>
-            <div class="burger" id="burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
+            <div class="burger" id="burger" @click="toggleMainMenu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
             </div>
-            <div class="menu" id="menu">            
-            <ul class="menu-inner">
+            <div :class="[showMainMenu?'is-active':'','menu']" id="menu">            
+            <ul :class="['menu-inner']" >
                 <li class="menu-item"><router-link to="about" class="mege-link">Home</router-link></li>
                 <li class="menu-item">
-                    <a href="javascript:void(0)" class="mege-link">Products 
+                    <a href="javascript:void(0)" class="mege-link" @click="toggleSubMenu">Products 
                         <span class="next-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M13 24a1.011 1.011 0 0 1-.707-1.707L18.586 16l-6.293-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7A1 1 0 0 1 13 24z" fill="#000000" data-original="#000000" class=""></path></g></svg>
                         </span>
                     </a>
-                    <ul class="mega-menu">                    
+                    <ul :class="[showSubMenu?'active':'','mega-menu']">                    
                         <li class="menu-item">
-                            <router-link to="furnishing" class="mege-link">Furnishing
-                                <span class="next-arrow">
+                            <a href="javascript:void(0)" class="mege-link">Furnishing
+                                <span class="next-arrow" @click="toggleMenu('furnishing')">
                                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M13 24a1.011 1.011 0 0 1-.707-1.707L18.586 16l-6.293-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7A1 1 0 0 1 13 24z" fill="#000000" data-original="#000000" class=""></path></g></svg>
                                 </span>
-                            </router-link>
+                            </a>
                             
-                            <ul class="mega-menu child-menu">       
+                            <ul :class="[menuToggle && menuToToggle=='furnishing'?'active':'','mega-menu child-menu']">       
                                 <li><router-link to="furnishing" >Uphoistery</router-link></li>
                                 <li><router-link to="furnishing" >Curtains</router-link></li>                                         
                                 <li><router-link to="furnishing" >Sheer</router-link></li>
@@ -140,12 +140,12 @@
                             </ul>
                         </li>
                         <li class="menu-item">
-                            <a href="#" class="mege-link">Garments
-                                <span class="next-arrow">
+                            <a href="javascript:void(0)" class="mege-link">Garments
+                                <span class="next-arrow" @click="toggleMenu('garments')">
                                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M13 24a1.011 1.011 0 0 1-.707-1.707L18.586 16l-6.293-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7A1 1 0 0 1 13 24z" fill="#000000" data-original="#000000" class=""></path></g></svg>
                                 </span>
                             </a>
-                            <ul class="mega-menu child-menu">                                                
+                            <ul :class="[menuToggle && menuToToggle=='garments'?'active':'','mega-menu child-menu']">                                                
                                 <li><router-link to="furnishing" >Ethnic Wear</router-link></li>
                                 <li><router-link to="furnishing" >Western Wear</router-link></li>                                         
                                 <li><router-link to="furnishing" >Sports Wear</router-link></li>
@@ -155,11 +155,11 @@
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)" class="mege-link">Value Edition
-                            <span class="next-arrow">
+                            <span class="next-arrow" @click="toggleMenu('valueedition')">
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M13 24a1.011 1.011 0 0 1-.707-1.707L18.586 16l-6.293-6.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7A1 1 0 0 1 13 24z" fill="#000000" data-original="#000000" class=""></path></g></svg>
                             </span>
                             </a>
-                            <ul class="mega-menu child-menu">             
+                            <ul :class="[menuToggle && menuToToggle=='valueedition'?'active':'','mega-menu child-menu']">             
                                 <li><router-link to="furnishing" >Foil Print</router-link></li>
                                 <li><router-link to="furnishing" >Mukesh Print</router-link></li>                                         
                                 <li><router-link to="furnishing" >Embroidery</router-link></li>
@@ -181,3 +181,23 @@
         </nav>    
     </header>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+const showMainMenu = ref(false)
+const showSubMenu = ref(false)
+const menuToToggle = ref(null);
+const menuToggle = ref(false);
+function toggleMainMenu(){
+    showMainMenu.value = !showMainMenu.value
+}
+
+function toggleSubMenu(){
+    showSubMenu.value = !showSubMenu.value
+}
+
+function toggleMenu(menu){
+    menuToToggle.value = menu
+    menuToggle.value = !menuToggle.value
+}
+</script>

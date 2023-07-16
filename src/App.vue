@@ -1692,7 +1692,10 @@ padding-bottom: 10px;
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  opacity: 0;  
+}
+.active{
+  
 }
 .header .logo img{
   width: 100px;
@@ -1724,6 +1727,27 @@ padding-bottom: 10px;
   }
   .contact-info .btn_shop{
     margin-top:0;
+  }
+}
+.has_loader{
+  width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    position: absolute;
+}
+.has_loader img{
+width: 100%;
+    max-width: 200px;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin: 0 auto;
+    transform: translateX(-25%);
+}
+@media (max-width: 426px){
+  .has_loader img{
+    left: 40%;
   }
 }
 </style>
